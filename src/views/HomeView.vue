@@ -1,6 +1,5 @@
 <template>
     <TodoList />
-    <TodoTask />
 </template>
 
 <script>

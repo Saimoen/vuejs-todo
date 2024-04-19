@@ -1,11 +1,11 @@
 <template>
-    <tr v-if="item">
+    <tr>
       <td>
         <s v-if="item.completed">{{ item.title }}</s>
         <span v-else>{{ item.title }}</span>
       </td>
       <td>
-        <input type="checkbox" :checked="item.completed" />
+        <input type="checkbox" v-model="item.completed" />
       </td>
     </tr>
   </template>
