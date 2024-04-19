@@ -12,7 +12,7 @@ export default {
   name: 'HomeView',
   components: {
     TodoList,
-    TodoTask
+    TodoTask,
   }
 }
 </script>

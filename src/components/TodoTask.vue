@@ -1,9 +1,15 @@
 <template>
-    <tr>
-        <td><s v-if="item.completed">{{ item.title }}</s><span v-else>{{ item.title }}</span></td>
-        <td><input type="checkbox" v-model="item.completed"></td>
+    <tr v-if="item">
+      <td>
+        <s v-if="item.completed">{{ item.title }}</s>
+        <span v-else>{{ item.title }}</span>
+      </td>
+      <td>
+        <input type="checkbox" :checked="item.completed" />
+      </td>
     </tr>
-</template>
+  </template>
+  
 
 
 <script>
