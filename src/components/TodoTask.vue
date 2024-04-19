@@ -1,22 +1,17 @@
+<template>
+    <tr>
+        <td><s v-if="item.completed">{{ item.title }}</s><span v-else>{{ item.title }}</span></td>
+        <td><input type="checkbox" v-model="item.completed"></td>
+    </tr>
+</template>
+
+
 <script>
-import axios from 'axios';
-
 export default {
-  mounted() {
-    alert('test');
-
-    axios.get('https://jsonplaceholder.typicode.com/todos')
-      .then(response => {
-        // en cas de réussite de la requête
-        console.log(response);
-      })
-      .catch(error => {
-        // en cas d’échec de la requête
-        console.error(error);
-      })
-      .finally(() => {
-        // dans tous les cas
-      });
-  }
+    props: {
+        item: Object
+    },
+    mounted() {
+    }
 }
 </script>

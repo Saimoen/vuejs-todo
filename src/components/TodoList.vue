@@ -12,12 +12,7 @@
       <th scope="col">Fait</th>
     </tr>
   </thead>
-  <tbody  v-for="item in todos" :key="item.id">
-    <tr>
-        <td><s v-if="item.completed">{{ item.title }}</s><span v-else>{{ item.title }}</span></td>
-        <td><input type="checkbox" v-model="item.completed"</td>
-    </tr>
-  </tbody>
+  <TodoTask v-for="todo in todos" :item="todo" :key="todo.id" />
 </table>
 </div>
   </template>
@@ -48,20 +43,11 @@ export default {
     }
   },
   mounted() {
-    let data = null;
     axios.get('https://jsonplaceholder.typicode.com/todos')
       .then(response => {
         // en cas de réussite de la requête
-        console.log(response.data);
         this.todos = response.data;
       })
-      .catch(error => {
-        // en cas d’échec de la requête
-        console.error(error);
-      })
-      .finally(() => {
-        // dans tous les cas
-      });
   }
 }
 </script>
